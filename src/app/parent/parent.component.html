@@ -1,0 +1,8 @@
+<p>parent works!--{{title12}}</p>
+
+<div *ngIf="childMessage !==''">
+  <h1>{{childMessage}}</h1>
+</div>
+<app-child [parentMessage]="parentMessage" (sendMessageEvent)="receiveMessage($event)">
+
+</app-child>

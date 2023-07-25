@@ -1,0 +1,37 @@
+<p>directives works!</p>
+
+<h1 *ngIf="isShow">isShow - {{isShow}}</h1>
+
+<ul >
+  <li *ngFor="let item of numberList; let i=index; let first=first;let last=last;let isOdd=odd;" >
+    <span (click)="selectedItem(i,item)">
+      num={{item}}
+      first={{first}}
+      last={{last}}
+    </span>
+  </li>
+</ul>
+
+
+<ul *ngFor="let user of users;" [ngSwitch]="user.age">
+  <li *ngSwitchCase="10">
+    {{user.firstName}} -{{user.lastName}}
+  </li>
+
+  <li *ngSwitchCase="30">
+    {{user.firstName}} -{{user.lastName}}
+  </li>
+
+  <li *ngSwitchCase="20">
+    {{user.firstName}} -{{user.lastName}}
+  </li>
+</ul>
+
+
+<div>
+  To render the name variable we use this syntax <pre ngNonBindable>{{ name }}</pre>
+</div>
+
+<pre>
+  {{node}}
+</pre>
