@@ -1,0 +1,17 @@
+.nav-bar{
+  padding: 10px;
+  background-color: bisque;
+  border-radius: solid thin gray;
+
+  .navigation {
+    display: block;
+  
+  
+    li {
+      display: inline-block;
+      margin: 10px;
+      text-transform: capitalize;
+    }
+  }
+  
+}
