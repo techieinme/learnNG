@@ -1,6 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { User } from '../service/User';
-import { Observable } from 'rxjs';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -11,9 +10,12 @@ import { UserService } from '../service/user.service';
 export class UsersComponent implements OnInit ,OnChanges{
 
   Users!:User[];
-  constructor(private userService:UserService){
+   
 
-  }
+
+  constructor(private        userService:UserService){
+
+
 
   ngOnInit(): void {
    this.getUsers();
@@ -31,7 +33,7 @@ export class UsersComponent implements OnInit ,OnChanges{
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
-    
+    console.log("heello")
   }
 
 
