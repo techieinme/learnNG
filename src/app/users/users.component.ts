@@ -10,13 +10,10 @@ import { UserService } from '../service/user.service';
 export class UsersComponent implements OnInit ,OnChanges{
 
   Users!:User[];
-   
+   a =  ["test","asd"];
+  constructor(private userService:UserService){
 
-
-  constructor(private        userService:UserService){
-
-
-
+  }
   ngOnInit(): void {
    this.getUsers();
   }
