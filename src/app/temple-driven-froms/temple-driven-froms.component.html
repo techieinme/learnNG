@@ -1,0 +1,76 @@
+<div>
+  <form  #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+
+    <pre>
+      {{userForm.value | json}}
+    </pre>
+
+    <pre>
+      valid {{userForm.valid}}
+      touched {{userForm.touched}}
+      submitted {{userForm.submitted}}
+    </pre>
+
+    <!-- <div>
+      <label for="firstName">firstName</label>
+      <input type="text" name="firstName" id="firstName" required #fname="ngModel" ngModel>
+     <br/>
+     <pre>
+      {{fname.valid}}
+      {{fname.touched}}
+      {{fname.dirty}}
+     </pre>
+    </div> -->
+    <div>
+      <label for="firstName">firstName</label>
+      <input type="text" name="firstName" required #fname="ngModel" id="firstName" [(ngModel)]="user.firstName">
+    
+      <pre>
+        valid  {{fname.valid}}
+        touched  {{fname.touched}}
+        dirty  {{fname.dirty}}
+       </pre>
+    </div>
+    <div>
+      <label for="lastName">lastName</label>
+      <input type="text" name="lastName" id="lastName" [(ngModel)]="user.lastName">
+    </div>
+    <div>
+      <label for="email">email</label>
+      <input type="text" name="email" id="email" [(ngModel)]="user.email">
+    </div>
+
+   <div>
+    <select name="gender" [(ngModel)]="user.gender">
+      <option value=""> select gender</option>
+      <option *ngFor="let item of list" [value]="item">{{item}}</option>
+    </select>
+   </div>
+
+
+   <!-- nested form group  -->
+   <div ngModelGroup="address">
+    <div>
+      <label for="city">city</label>
+      <input type="text" name="city" id="city"  [(ngModel)]="user.address.city">
+    </div>
+
+    <div>
+      <label for="state">state</label>
+      <input type="text" name="state" id="state"  [(ngModel)]="user.address.state">
+    </div>
+
+    <div>
+      <label for="pincode">pincode</label>
+      <input type="text" name="pincode" id="pincode"  [(ngModel)]="user.address.pincode">
+    </div>
+
+
+   </div>
+
+   <div>
+   <input type="submit" value="submit">
+   <input type="reset" value="rest" (click)="resetFrom(userForm)">
+   </div>
+  </form>
+</div>
