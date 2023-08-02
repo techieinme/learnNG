@@ -1,9 +1,10 @@
 const simple = () => {
-    console.log('Hello');
+  console.log('Hello');
 };
 
 simple();
 
 const hello = () => {
-    console.log('Hello');
+  console.log('Hello');
 };
+hello();
