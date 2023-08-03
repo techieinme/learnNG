@@ -1,0 +1,23 @@
+<form [formGroup]="addressForm">
+
+  <div>
+    <label for="name">name</label>
+    <input type="text" name="name" id="name" formControlName="name">
+  </div>
+
+
+  <div formArrayName="addresses">
+    <div *ngFor="let addressGroup of addressesFormArray.controls; let i = index" [formGroupName]="i">
+      <div>
+        <label>City:</label>
+        <input type="text" formControlName="city" />
+      </div>
+      <div>
+        <label>Country:</label>
+        <input type="text" formControlName="country" />
+      </div>
+      <button type="button" (click)="removeAddress(i)">Remove</button>
+    </div>
+  </div>
+  <button type="button" (click)="addAddress()">Add Address</button>
+</form>
