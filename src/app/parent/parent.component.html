@@ -1,0 +1,16 @@
+  <ng-content select="header"></ng-content>
+  <hr>
+  <ng-content select=".content"></ng-content>
+  <hr>
+  <ng-container select="[classHeader]"></ng-container>
+  <hr>
+  <ng-content select="footer"></ng-content>
+  <hr>
+
+  <div class="myParagaraph">
+    <ng-content select="[question]"></ng-content>
+    <hr>
+  
+  </div>
+ 
+  <ng-content ></ng-content>
