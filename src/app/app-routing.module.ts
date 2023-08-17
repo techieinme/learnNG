@@ -13,42 +13,48 @@ import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
-    path:"", component :HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path :"aboutus", component : AboutusComponent
-  },  
+    path: 'aboutus',
+    component: AboutusComponent,
+  },
   {
-    path :"users", component : UsersComponent,
+    path: 'users',
+    component: UsersComponent,
 
-    children : [
+    children: [
       {
-        path:'deatils',
-        component : UserDetailComponent
-      }
-    ]
+        path: 'deatils',
+        component: UserDetailComponent,
+      },
+    ],
   },
   {
-    path :"product", component : ProductComponent,
-    canActivate : [productGuard]
+    path: 'product',
+    component: ProductComponent,
+    canActivate: [productGuard],
   },
   {
-    path :"product/:id", component : ProductDetailComponent,
-    resolve : {
-      routeResolver : testResolverResolver
-    }
+    path: 'product/:id',
+    component: ProductDetailComponent,
+    resolve: {
+      routeResolver: testResolverResolver,
+    },
   },
   {
-    path :"contact", component : ContactComponent,
+    path: 'contact',
+    component: ContactComponent,
   },
   {
-    path :"**", component : NotFoundComponent
-  }
-
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
